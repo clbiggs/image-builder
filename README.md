@@ -1,11 +1,11 @@
 # Go Repository Template
 
 [![Keep a Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-%23E05735)](CHANGELOG.md)
-[![Go Reference](https://pkg.go.dev/badge/github.com/golang-templates/seed.svg)](https://pkg.go.dev/github.com/golang-templates/seed)
-[![go.mod](https://img.shields.io/github/go-mod/go-version/golang-templates/seed)](go.mod)
-[![LICENSE](https://img.shields.io/github/license/golang-templates/seed)](LICENSE)
-[![Go Report Card](https://goreportcard.com/badge/github.com/golang-templates/seed)](https://goreportcard.com/report/github.com/golang-templates/seed)
-[![Codecov](https://codecov.io/gh/golang-templates/seed/branch/main/graph/badge.svg)](https://codecov.io/gh/golang-templates/seed)
+[![Go Reference](https://pkg.go.dev/badge/github.com/clbiggs/image-builder.svg)](https://pkg.go.dev/github.com/clbiggs/image-builder)
+[![go.mod](https://img.shields.io/github/go-mod/go-version/clbiggs/image-builder)](go.mod)
+[![LICENSE](https://img.shields.io/github/license/clbiggs/image-builder)](LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/clbiggs/image-builder)](https://goreportcard.com/report/github.com/clbiggs/image-builder)
+[![Codecov](https://codecov.io/gh/clbiggs/image-builder/branch/main/graph/badge.svg)](https://codecov.io/gh/clbiggs/image-builder)
 
 ⭐ `Star` this repository if you find it valuable and worth maintaining.
 
@@ -13,44 +13,23 @@
 
 ## Description
 
-This is a GitHub repository template for a Go application.
-You can use it:
+This is a Go application used to build Docker images. It is based on the [dotnet/docker-tools] (https://github.com/dotnet/docker-tools) `ImageBuilder` project.
 
-- to create a new repository with automation and environment setup,
-- as reference when improving automation for an existing repository.
 
-It includes:
-
-- continuous integration via [GitHub Actions](https://github.com/features/actions),
-- build automation via [Make](https://www.gnu.org/software/make),
-- dependency management using [Go Modules](https://github.com/golang/go/wiki/Modules),
-- code formatting using [gofumpt](https://github.com/mvdan/gofumpt),
-- linting with [golangci-lint](https://github.com/golangci/golangci-lint)
-  and [misspell](https://github.com/client9/misspell),
-- unit testing with
-  [race detector](https://blog.golang.org/race-detector),
-  code coverage [HTML report](https://blog.golang.org/cover)
-  and [Codecov report](https://codecov.io/),
-- releasing using [GoReleaser](https://github.com/goreleaser/goreleaser),
-- dependencies scanning and updating thanks to [Dependabot](https://dependabot.com),
-- security code analysis using [CodeQL Action](https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/about-code-scanning),
-  and [govulncheck](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck),
-- [Visual Studio Code](https://code.visualstudio.com) configuration with [Go](https://code.visualstudio.com/docs/languages/go) support.
 
 ## Usage
 
-1. Sign up on [Codecov](https://codecov.io/) and configure
-   [Codecov GitHub Application](https://github.com/apps/codecov).
-1. Click the `Use this template` button (alt. clone or download this repository).
-1. Replace all occurrences of `golang-templates/seed` to `your_org/repo_name` in all files.
-1. Replace all occurrences of `seed` to `repo_name` in [Dockerfile](Dockerfile).
-1. Follow [these](https://docs.codecov.com/docs/adding-the-codecov-token#github-actions)
-   instructions to add the `CODECOV_TOKEN` GitHub Actions and Dependabot secret.
-1. Update the following files:
-   - [CHANGELOG.md](CHANGELOG.md)
-   - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-   - [LICENSE](LICENSE)
-   - [README.md](README.md)
+### Arguments/Flags
+| Argument/Flag           | Description                         |
+|-------------------------|-------------------------------------|
+| `--manifest <path>`     | The path to the manifest json file. |
+| `--repo <name>`         | The repo name.                      |
+| `--image <name>`        | The image name.                     |
+| `--os <os>`             | The OS.                             |
+| `--arch <arch>`         | The architecture.                   |
+| `--dockerfile <path>`   | The path to the dockerfile.         |
+| `--tag <tag>`           | The image tag.                      |
+| `--registry <override>` | Override for registry value.        |
 
 ## Setup
 

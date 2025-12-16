@@ -1,4 +1,4 @@
-module github.com/golang-templates/seed
+module github.com/clbiggs/image-builder
 
 go 1.25.1
 

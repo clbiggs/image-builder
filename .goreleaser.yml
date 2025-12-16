@@ -12,6 +12,7 @@ builds:
       - windows
     goarch:
       - amd64
+    main: ./cmd/image-builder
 archives:
   - format_overrides:
       - goos: windows
@@ -19,10 +20,10 @@ archives:
           - zip
 dockers:
   - image_templates:
-    - "ghcr.io/golang-templates/seed:latest"
-    - "ghcr.io/golang-templates/seed:{{ .Major }}"
-    - "ghcr.io/golang-templates/seed:{{ .Major }}.{{ .Minor }}"
-    - "ghcr.io/golang-templates/seed:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
+    - "ghcr.io/clbiggs/image-builder:latest"
+    - "ghcr.io/clbiggs/image-builder:{{ .Major }}"
+    - "ghcr.io/clbiggs/image-builder:{{ .Major }}.{{ .Minor }}"
+    - "ghcr.io/clbiggs/image-builder:{{ .Major }}.{{ .Minor }}.{{ .Patch }}"
     build_flag_templates:
     - "--pull"
     # OCI annotations: https://github.com/opencontainers/image-spec/blob/main/annotations.md
@@ -33,6 +34,8 @@ dockers:
     - "--label=org.opencontainers.image.source={{.GitURL}}"
 release:
   github:
+    owner: clbiggs
+    name: image-builder
   name_template: "{{.Version}}"
   prerelease: auto
   mode: append
